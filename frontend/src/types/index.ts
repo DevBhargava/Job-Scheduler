@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export type Priority = 'Low' | 'Medium' | 'High';
 export type Status = 'pending' | 'running' | 'completed' | 'failed';
 

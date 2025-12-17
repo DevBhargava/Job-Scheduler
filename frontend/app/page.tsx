@@ -1,15 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { jobsApi } from '@/lib/api';
-import { Job, Priority, Status } from '@/types';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { jobsApi } from '@/src/lib/api';
+import { Job, Priority, Status } from '@/src/types';
+import { Button } from '@/src/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/src/components/ui/card';
+import { Badge } from '@/src/components/ui/badge';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/src/components/ui/select';
 import { Play, Plus, Eye, RefreshCw } from 'lucide-react';
-import CreateJobDialog from '@/components/CreateJobDialogProps';
-import JobDetailDialog from '@/components/JobDetailDialogProps';
+import CreateJobDialog from '@/src/components/CreateJobDialog';
+import JobDetailDialog from '@/src/components/JobDetailDialog';
+
 export default function Home() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
@@ -257,7 +258,7 @@ export default function Home() {
         <JobDetailDialog
           job={selectedJob}
           open={!!selectedJob}
-          onOpenChange={(open: any) => !open && setSelectedJob(null)}
+          onOpenChange={(open) => !open && setSelectedJob(null)}
         />
       )}
     </div>

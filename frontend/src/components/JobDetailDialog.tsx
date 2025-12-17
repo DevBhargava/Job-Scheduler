@@ -1,6 +1,6 @@
-import { Job } from '@/types';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Badge } from '@/components/ui/badge';
+import { Job } from '@/src/types';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/src/components/ui/dialog';
+import { Badge } from '@/src/components/ui/badge';
 
 interface JobDetailDialogProps {
   job: Job;
